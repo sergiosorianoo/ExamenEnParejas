@@ -1,4 +1,4 @@
-public class Coche {
+public class Coche extends Vehiculo{
 
     //Atributos
     private int plazasMax, puertas;
@@ -7,7 +7,8 @@ public class Coche {
 
     //Metodos
     //Constructor
-    public Coche(int plazasMax, int puertas, float volMaletero, String tipoCoche) {
+    public Coche(String matricula, String modelo, String marca, String tipoMotor, float kmRecorridos, float precioDia, int plazasMax, int puertas, float volMaletero, String tipoCoche) {
+        super(matricula, modelo, marca, tipoMotor, kmRecorridos, precioDia);
         this.plazasMax = plazasMax;
         this.puertas = puertas;
         this.volMaletero = volMaletero;
