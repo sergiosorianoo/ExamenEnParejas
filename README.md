@@ -7,3 +7,6 @@ Sergio ha creado y completado la Clase Furgon, y cambiado la Clase Coche para co
 Mara ha creado y completado la Clase Camión, tiempo inicio 08:51, tiempo final 08:53
 Sergio ha creado y completado la Clase Coche, tiempo inicio 09:01, tiempo final 09:04
 Mara ha creado y completado la Clase Reserva, tiempo inicio 09:09, tiempo final 09:10
+Sergio ha creado y completado la Clase Empresa, aunque queda por terminar el metodo "devolverVehiculo()", tiempo inicio 09:14, tiempo final 09:55.
+
+Queda añadir en Clase Vehiculo si esta alquilado o no.
