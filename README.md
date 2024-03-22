@@ -10,3 +10,5 @@ Mara ha creado y completado la Clase Reserva, tiempo inicio 09:09, tiempo final 
 Sergio ha creado y completado la Clase Empresa, aunque queda por terminar el metodo "devolverVehiculo()", tiempo inicio 09:14, tiempo final 09:55.
 
 Queda añadir en Clase Vehiculo si esta alquilado o no.
+
+Sergio ha terminado la Clase Empresa, tiempo inicio 09:21, tiempo final 09:31
