@@ -38,6 +38,15 @@ public class Empresa {
         }
         return false;
     }
+    
+    public Vehiculo buscarVehiculo(String matricula){
+        for (int i = 0; i < listaVehiculos.size(); i++){
+            if (this.listaVehiculos.get(i).getMatricula().compareTo(matricula)==0){
+                return listaVehiculos.get(i);
+            }
+        }
+        return null;
+    }
 
     public boolean crearCliente(Cliente c){
         if (c != null && !mapaClientes.containsValue(c)){
@@ -47,11 +56,15 @@ public class Empresa {
         return false;
     }
 
-    public boolean crearReserva(Cliente c, Vehiculo v,String fechaInicio,int diasAlquilado){
-        if (comprobarVehiculoLista(v) && mapaClientes.containsValue(c)){
-            listaReservas.add(new Reserva(c,v,fechaInicio,diasAlquilado));
-            return true;
-        }
+    public boolean crearReserva(String dni, String matricula, String fechaInicio,int diasAlquilado){
+    	Vehiculo v = buscarVehiculo(matricula);
+    	if(v != null) {
+	        if (mapaClientes.containsKey(dni)){
+	        	v.setAlquilado(true);
+	            listaReservas.add(new Reserva(mapaClientes.get(dni),v,fechaInicio,diasAlquilado));
+	            return true;
+	        }
+    	}
         return false;
     }
 
@@ -60,7 +73,7 @@ public class Empresa {
 
         for (Vehiculo v: listaVehiculos){
             if (v instanceof Coche && v.isAlquilado() != true){
-                if (plazasMax > ((Coche) v).getPlazasMax() && tipoMotor == v.tipoMotor){
+                if (plazasMax < ((Coche) v).getPlazasMax() && tipoMotor.compareTo(v.getTipoMotor())==0){
                     listaCoches.add(v);
                 }
             }
@@ -73,7 +86,7 @@ public class Empresa {
 
         for (Vehiculo v: listaVehiculos){
             if (v instanceof Furgon && v.isAlquilado() != true){
-                if (cargaMax > ((Furgon) v).getCargaMax() && plazas > ((Furgon) v).getPlazas()){
+                if (cargaMax < ((Furgon) v).getCargaMax() && plazas < ((Furgon) v).getPlazas()){
                     listaFurgon.add(v);
                 }
             }
@@ -86,7 +99,7 @@ public class Empresa {
 
         for (Vehiculo v: listaVehiculos){
             if (v instanceof Camion && v.isAlquilado() != true){
-                if (cargaMax > ((Camion) v).getCargaMax() && longitud < ((Camion) v).getLongitud()){
+                if (cargaMax < ((Camion) v).getCargaMax() && longitud > ((Camion) v).getLongitud()){
                     listaCamion.add(v);
                 }
             }
