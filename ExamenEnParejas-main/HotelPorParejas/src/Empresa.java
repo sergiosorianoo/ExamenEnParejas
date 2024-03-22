@@ -41,7 +41,7 @@ public class Empresa {
 
     public boolean crearCliente(Cliente c){
         if (c != null && !mapaClientes.containsValue(c)){
-            mapaClientes.put(c.dni, c);
+            mapaClientes.put(c.getDni(), c);
             return true;
         }
         return false;
@@ -59,7 +59,7 @@ public class Empresa {
         ArrayList<Vehiculo> listaCoches = new ArrayList<>();
 
         for (Vehiculo v: listaVehiculos){
-            if (v instanceof Coche && isAlquilado != true){
+            if (v instanceof Coche && v.isAlquilado() != true){
                 if (plazasMax > ((Coche) v).getPlazasMax() && tipoMotor == v.tipoMotor){
                     listaCoches.add(v);
                 }
@@ -72,8 +72,8 @@ public class Empresa {
         ArrayList<Vehiculo> listaFurgon = new ArrayList<>();
 
         for (Vehiculo v: listaVehiculos){
-            if (v instanceof Furgon && isAlquilado != true){
-                if (cargaMax > ((Furgon) v).cargaMax && plazas > ((Furgon) v).plazas){
+            if (v instanceof Furgon && v.isAlquilado() != true){
+                if (cargaMax > ((Furgon) v).getCargaMax() && plazas > ((Furgon) v).getPlazas()){
                     listaFurgon.add(v);
                 }
             }
@@ -85,7 +85,7 @@ public class Empresa {
         ArrayList<Vehiculo> listaCamion = new ArrayList<>();
 
         for (Vehiculo v: listaVehiculos){
-            if (v instanceof Camion && isAlquilado != true){
+            if (v instanceof Camion && v.isAlquilado() != true){
                 if (cargaMax > ((Camion) v).getCargaMax() && longitud < ((Camion) v).getLongitud()){
                     listaCamion.add(v);
                 }
@@ -94,9 +94,22 @@ public class Empresa {
         return listaCamion;
     }
 
-    public Vehiculo devolverVehiculo(float kmRecorridos, float precioDia){
-        
+    public float devolverVehiculo(String matricula, double kmsRecorridosAlquilados){
+        float precioApagar = 0;
 
+        for (int i = 0; i < listaReservas.size(); i++){
+        if (listaReservas.get(i).getVehiculo().getMatricula().compareTo(matricula) == 0){
+            listaReservas.get(i).getVehiculo().setAlquilado(false);
+            float kmsTotales = (float) kmsRecorridosAlquilados / listaReservas.get(i).getDiasAlquilado();
+            if (kmsTotales > 500){
+                precioApagar = listaReservas.get(i).getVehiculo().getPrecioDia() + listaReservas.get(i).getVehiculo().getPrecioDia() * 20 / 100;
+            }else {
+                precioApagar = listaReservas.get(i).getVehiculo().getPrecioDia();
+            }
+        listaReservas.remove(listaReservas.get(i));
+        }
+    }
+    return precioApagar;
     }
 
 }
