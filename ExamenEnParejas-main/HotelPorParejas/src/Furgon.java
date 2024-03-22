@@ -2,12 +2,12 @@ public class Furgon extends Vehiculo{
 
 
     //Atributos
-    protected int cargaMax, plazas;
+    private int cargaMax, plazas;
 
     //Metodos
     //Constructor
     public Furgon(String matricula, String modelo, String marca, String tipoMotor, float kmRecorridos, float precioDia, int cargaMax, int plazas) {
-        super(matricula,modelo, marca, tipoMotor, kmRecorridos, precioDia);
+        super(matricula, modelo, marca, tipoMotor, kmRecorridos, precioDia);
         this.cargaMax = cargaMax;
         this.plazas = plazas;
     }

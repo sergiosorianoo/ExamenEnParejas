@@ -1,7 +1,7 @@
 public class Cliente {
 
     //Atributos
-    protected String nombre,apellidos,email,telefono,dni,numTarjetaCred;
+    private String nombre,apellidos,email,telefono,dni,numTarjetaCred;
 
     //Metodos
     //Constructor
