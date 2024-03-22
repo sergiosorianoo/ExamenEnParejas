@@ -115,9 +115,11 @@ public class Empresa {
             listaReservas.get(i).getVehiculo().setAlquilado(false);
             float kmsTotales = (float) kmsRecorridosAlquilados / listaReservas.get(i).getDiasAlquilado();
             if (kmsTotales > 500){
-                precioApagar = listaReservas.get(i).getVehiculo().getPrecioDia() + listaReservas.get(i).getVehiculo().getPrecioDia() * 20 / 100;
+                precioApagar = (listaReservas.get(i).getVehiculo().getPrecioDia() + 
+                				listaReservas.get(i).getVehiculo().getPrecioDia() * 20 / 100) * 
+                				listaReservas.get(i).getDiasAlquilado();
             }else {
-                precioApagar = listaReservas.get(i).getVehiculo().getPrecioDia();
+                precioApagar = listaReservas.get(i).getVehiculo().getPrecioDia() * listaReservas.get(i).getDiasAlquilado();
             }
         listaReservas.remove(listaReservas.get(i));
         }

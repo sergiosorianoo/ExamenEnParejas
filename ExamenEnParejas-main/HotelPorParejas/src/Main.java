@@ -192,7 +192,7 @@ public class Main {
     	
     	
     	if(miEmpresa.crearReserva(dni, matricula, fecha, numDias)) {
-    		System.out.println("Cliente introducido correctamente");
+    		System.out.println("Reserva realizada correctamente");
     	}
     }
     
