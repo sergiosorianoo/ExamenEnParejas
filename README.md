@@ -24,4 +24,4 @@ Viernes 22:
 
 Sergio ha terminado la Clase Empresa, tiempo inicio 08:21, tiempo final 08:31
 
-Sergio ha terminado la Clase Main, tiempo inicio 08:34, tiempo final 09:25
+Mara ha terminado la Clase Main, tiempo inicio 08:34, tiempo final 09:25
