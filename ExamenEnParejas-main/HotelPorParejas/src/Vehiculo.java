@@ -4,6 +4,7 @@ public class Vehiculo {
 	//Atributos
 	protected String matricula, modelo, marca, tipoMotor;
 	protected float kmRecorridos, precioDia;
+	protected boolean alquilado;
 	
 	//Constructor
 	public Vehiculo(String matricula, String modelo, String marca, String tipoMotor, float kmRecorridos,
@@ -15,9 +16,11 @@ public class Vehiculo {
 		this.tipoMotor = tipoMotor;
 		this.kmRecorridos = kmRecorridos;
 		this.precioDia = precioDia;
+		this.alquilado = false;
 	}
 	
 	//Getters y setters
+	
 
 	public String getMatricula() {
 		return matricula;
@@ -67,5 +70,13 @@ public class Vehiculo {
 		this.precioDia = precioDia;
 	}
 	
+	public boolean isAlquilado() {
+		return alquilado;
+	}
+
+	public void setAlquilado(boolean alquilado) {
+		this.alquilado = alquilado;
+	}
+
 	
 }
