@@ -19,11 +19,13 @@ Sergio ha creado y completado la Clase Empresa, aunque queda por terminar el met
 
 Queda añadir en Clase Vehiculo si esta alquilado o no.
 
-Falta añadir que al devolver el vehiculo, por cada día que tarde de más, esos días se les cobra un 50% de más.(Intentarlo con el metodo Calendar, que sirve para las fechas).
-
-
 Viernes 22:
 
 Sergio ha terminado la Clase Empresa, tiempo inicio 08:21, tiempo final 08:31
 
 Mara ha terminado la Clase Main, tiempo inicio 08:34, tiempo final 09:25
+
+Para Semana Santa, traerlo hecho cuando volvamos.
+
+Falta añadir que al devolver el vehiculo, por cada día que tarde de más, esos días se les cobra un 50% de más.(Intentarlo con el metodo Calendar, que sirve para las fechas).
+
