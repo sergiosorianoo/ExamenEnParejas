@@ -19,6 +19,8 @@ Sergio ha creado y completado la Clase Empresa, aunque queda por terminar el met
 
 Queda añadir en Clase Vehiculo si esta alquilado o no.
 
+Falta añadir que al devolver el vehiculo, por cada día que tarde de más, esos días se les cobra un 50% de más.(Intentarlo con el metodo Calendar, que sirve para las fechas).
+
 
 Viernes 22:
 
